@@ -1,0 +1,63 @@
+
+First we get upgrade to the latest Qt5 package
+
+#sudo apt-get update
+#sudo apt-get upgrade
+#sudo apt-get install qtbase5-dev
+#sudo apt-get install qt5-default
+
+Download a Qt version (> 5.8) with serialport and serialusb support
+
+#wget http://download.qt.io/official_releases/qt/5.9/5.9.2/qt-opensource-linux-x64-5.9.2.run
+
+Make the downloaded file executable
+
+#chmod +x ./qt-opensource-linux-x64-5.9.2.run
+
+Run the install program either as sudo or regular user
+#sudo ./qt-opensource-linux-x64-5.9.2.run
+
+A new Window will open and press Enter, then fill in your existing Qt account info to start the process.
+If you dont have a Qt account just create one.
+Press Next on the default installation directory /opt/Qt5.9.2
+Select component ('Desktop gcc 64-bit' and 'Sources') and press Next
+Accept the license agreement and press Install and press Finish when done.
+It takes a while to install all of the files so just wait until it is finished.
+
+Verify the installed version
+
+#/opt/Qt5.9.2/5.9.2/gcc_64/bin/qmake -v
+
+Download the latest branch of SavvyCAN from Github
+
+#git clone https://github.com/collin80/SavvyCAN.git
+
+Change into the new source directory
+#cd SavvyCAN
+
+Run the qmake command from the latest downloaded version
+#/opt/Qt5.9.2/5.9.2/gcc_64/bin/qmake
+
+A new stash file is created
+Now run the 'make' command
+#make
+
+If everything works out well it will compile without error.
+
+Create the install script to install the binaries and create a desktop link
+#make install
+
+AND run the install script to actually install it...
+
+
+# ./install
+
+When everything is ok just click on the newly created SavvyCAN link/icon, 
+confirm its an executable and run the program
+
+
+
+
+
+
+
